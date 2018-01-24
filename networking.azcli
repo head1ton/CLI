@@ -1,0 +1,10 @@
+az login
+
+# 가상 네트워크 및 서브넷 만들기
+az group create --name myRNetwork --location "Japan East"
+
+# 가상 네트워크 만들기
+az network vnet create --resource-group myRGNetwork --name myVnet --address-prefix 10.0.0.0/16 --subnet-name myFrontendSubnet --subnet-prefix 10.0.1.0/24
+
+az network vnet subnet create --resource-group myRGNetwork --vnet-name myVnet --name myBackendSubnet --address-prefix 10.0.2.0/24
+
